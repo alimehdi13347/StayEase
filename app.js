@@ -114,6 +114,13 @@ app.use("/",userRoute);
 app.use("/search",searchRoute)
 app.use("/category",categoryRoute)
 
+// Redirect root to /listings
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
+
+
 // ===================== ERROR HANDLING ===================== //
 
 // Catch-all for unmatched routes (404)
