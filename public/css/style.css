@@ -1,0 +1,113 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+.container{
+    flex: 1;
+}
+/* navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;;
+}
+
+footer{
+    background-color: rgb(222, 222, 222);
+}
+.f-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+
+
+.f-info-links a:hover{
+    text-decoration: underline;  
+}
+.f-info-social i {
+   font-size: 1.3rem;
+   margin-right: 1rem;
+}
+
+/* cars */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 2rem !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-weight: 400 !important;
+}
+
+.listlink{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.3;
+    background-color:white
+}
+
+.btn-add{
+    background-color: #fe424d !important;
+    color: white !important;
+}
+
+/* show listing */
+.show-img{
+    width: 70%;
+    border-radius: 32px !important;
+    object-fit: cover;
+}
+
+.btns{
+    display: flex;
+    gap: 1.5rem;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 13rem;
+    margin-bottom: 2rem;
+}
+
+/* maps */
+#map {
+  height: 300px;
+  width: 100%;
+  border-radius: 15px;
+}
+

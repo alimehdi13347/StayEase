@@ -1,0 +1,137 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <br />
+    <h3>Edit Your Listing</h3>
+    <br />
+
+    <form
+      method="POST"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          id="title"
+          value="<%= listing.title %>"
+          class="form-control"
+          required
+          maxlength="100"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Title is required.</div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          id="description"
+          class="form-control"
+          rows="4"
+          required
+          maxlength="1000"
+        >
+<%= listing.description %></textarea
+        >
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a description.</div>
+      </div>
+
+      <!-- old image -->
+      <div class="mb-3">
+        <label class="form-label">Current Image</label><br />
+        <img
+          src="<%= originalImageUrl %>"
+          class="img-thumbnail"
+          style="max-height: 200px"
+        />
+      </div>
+
+      <!-- Image URL -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload image</label>
+        <input type="file" name="image" id="image" class="form-control" />
+      </div>
+
+      <!--Category  -->
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select class="form-select" name="listing[category]" required>
+          <option value=""><%=listing.category%></option>
+          <option value="trending">Trending</option>
+          <option value="rooms">Rooms</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain</option>
+          <option value="forest">Forest</option>
+          <option value="iconic">Iconic</option>
+          <option value="desert">Desert</option>
+          <option value="snow">Snow</option>
+          <option value="villas">Villas</option>
+          <option value="luxury">Luxury</option>
+        </select>
+      </div>
+
+      <!-- Price -->
+      <div class="mb-3">
+        <label for="price" class="form-label">Price (INR per night)</label>
+        <input
+          type="number"
+          step="0.01"
+          min="0"
+          name="listing[price]"
+          id="price"
+          value="<%= listing.price %>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid price.</div>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          id="location"
+          value="<%= listing.location %>"
+          class="form-control"
+          required
+          maxlength="100"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Location is required.</div>
+      </div>
+
+      <!-- Country -->
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          name="listing[country]"
+          id="country"
+          value="<%= listing.country %>"
+          class="form-control"
+          required
+          maxlength="56"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Country is required.</div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary">Update Listing</button>
+      <br /><br />
+    </form>
+  </div>
+</div>
