@@ -58,12 +58,12 @@
 
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">StayEase your home</a>
-        <% if(!currUser){%>
+        <% if (typeof currUser === "undefined" || !currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign up</b></a>
         <a class="nav-link" href="/login"><b>Log in</b></a>
-        <%}%><% if(currUser){%>
+        <% } else { %>
         <a class="nav-link" href="/logout"><b>Log out</b></a>
-        <%}%>
+        <% } %>
       </div>
     </div>
   </div>
