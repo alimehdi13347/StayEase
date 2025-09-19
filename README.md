@@ -34,21 +34,21 @@ StayEase is a full-stack listing app built with the MERN stack, designed to simp
 ### 🏠 Home Page
 A clean landing page showcasing listings with responsive layout.
 
-![Home Page](./public/assets/screenshots/home.png)
+![Home Page](./public/assets/screenshots/home.png.png)
 
 ---
 
 ### 📍 Single Listing View
 Displays listing details, owner info, and action buttons.
 
-![Listing Page](./public/assets/screenshots/listing.png)
+![Listing Page](./public/assets/screenshots/listing.png.png)
 
 ---
 
 ### 🌦️ Features: Reviews, Map & Weather
 Includes dynamic map (Leaflet), live weather (OpenWeatherMap), and user reviews.
 
-![Features](./public/assets/screenshots/features.png)
+![Features](./public/assets/screenshots/features.png.png)
 
 ---
 
