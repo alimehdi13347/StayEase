@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate") %>
+<h1>Chat with <%= listing.owner.username %></h1>
+
+<div id="messages"></div>
+<input id="messageInput" type="text" />
+<button id="sendBtn">Send</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const roomId = "<%= listing._id %>";
+  const senderName = "<%= currUser.username %>";
+
+  socket.emit('joinRoom', { roomId });
+
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const text = document.getElementById('messageInput').value.trim();
+    if (text !== "") {
+      socket.emit('sendMessage', { roomId, senderName, text });
+      document.getElementById('messageInput').value = '';
+    }
+  });
+
+  socket.on('receiveMessage', (msg) => {
+    const p = document.createElement('p');
+    p.textContent = `${msg.senderName}: ${msg.text}`;
+    document.getElementById('messages').appendChild(p);
+  });
+</script>
